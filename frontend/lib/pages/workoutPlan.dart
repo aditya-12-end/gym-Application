@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:frontend/integration/wrokout.dart';
 import 'package:frontend/myWidget/buildField.dart';
+import 'package:frontend/myWidget/mySuggestedWotkout.dart';
 import 'package:frontend/pages/createWorkoutPage.dart';
 import 'package:frontend/pages/wrokoutDetailsPage.dart';
 
@@ -411,6 +413,23 @@ class _WorkoutplanState extends State<Workoutplan> {
                         fontSize: 20,
                       ),
                       textAlign: TextAlign.start,
+                    ),
+                    Mysuggestedwotkout(
+                      title: "Push,Pull,Legs",
+                      subititle: "One of the most famous splits",
+                      icon: Icons.fitness_center_rounded,
+                    ),
+                    Mysuggestedwotkout(
+                      title: "BRO Split",
+                      subititle:
+                          "Routine that targets one distinct muscle group",
+                      icon: FontAwesomeIcons.weightHanging,
+                    ),
+                    Mysuggestedwotkout(
+                      title: "Wendler",
+                      subititle:
+                          "steady progression in the four compound lifts.",
+                      icon: FontAwesomeIcons.dumbbell,
                     ),
                   ],
                 )
