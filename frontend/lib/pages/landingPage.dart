@@ -139,7 +139,7 @@ class _LandingpageState extends State<Landingpage> {
               decoration: BoxDecoration(
                 color: _surfaceHigh,
                 shape: BoxShape.circle,
-                border: Border.all(color: _red.withOpacity(0.5), width: 1.5),
+                border: Border.all(color: _red.withValues(alpha: 0.5), width: 1.5),
               ),
               child: const Icon(
                 Icons.person_outline,
@@ -195,9 +195,9 @@ class _LandingpageState extends State<Landingpage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: _red.withOpacity(0.15),
+                  color: _red.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: _red.withOpacity(0.5)),
+                  border: Border.all(color: _red.withValues(alpha: 0.5)),
                 ),
                 child: const Text(
                   'WELCOME BACK',
@@ -432,7 +432,7 @@ class _LandingpageState extends State<Landingpage> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: _red.withOpacity(0.4),
+                          color: _red.withValues(alpha: 0.4),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -466,7 +466,7 @@ class _LandingpageState extends State<Landingpage> {
                 ],
               ),
             ),
-            Divider(color: Colors.white.withOpacity(0.08), height: 1),
+            Divider(color: Colors.white.withValues(alpha: 0.08), height: 1),
             const SizedBox(height: 8),
 
             _drawerGroupLabel('FEATURES'),
@@ -496,7 +496,7 @@ class _LandingpageState extends State<Landingpage> {
             }),
 
             const Spacer(),
-            Divider(color: Colors.white.withOpacity(0.06), height: 1),
+            Divider(color: Colors.white.withValues(alpha: 0.06), height: 1),
 
             _drawerItem(Icons.settings_outlined, 'Settings', () {}),
             _drawerItem(Icons.help_outline, 'Help & Support', () {}),
@@ -598,7 +598,6 @@ class _FeatureCard extends StatelessWidget {
   });
 
   static const Color _surface = Color(0xFF111111);
-  static const Color _red = Color(0xFFE53935);
   static const Color _textPrimary = Colors.white;
   static const Color _textMuted = Color(0xFF9E9E9E);
 
@@ -610,6 +609,7 @@ class _FeatureCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: _surface,
           borderRadius: BorderRadius.circular(14),
+          border: BoxBorder.all(color: const Color.fromARGB(255, 83, 82, 82)),
         ),
         padding: const EdgeInsets.fromLTRB(18, 22, 18, 18),
         child: Column(

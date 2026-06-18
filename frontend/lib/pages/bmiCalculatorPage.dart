@@ -173,9 +173,9 @@ class _BmicalculatorpageState extends State<Bmicalculatorpage>
                       height: 44,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(0.06),
+                        color: Colors.white.withValues(alpha: 0.06),
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.1),
+                          color: Colors.white.withValues(alpha: 0.1),
                         ),
                       ),
                       child: const Icon(
@@ -281,7 +281,7 @@ class _BmicalculatorpageState extends State<Bmicalculatorpage>
                               color: const Color(0xff141414),
                               borderRadius: BorderRadius.circular(28),
                               border: Border.all(
-                                color: Colors.white.withOpacity(0.07),
+                                color: Colors.white.withValues(alpha: 0.07),
                               ),
                             ),
                             child: Column(
@@ -328,10 +328,12 @@ class _BmicalculatorpageState extends State<Bmicalculatorpage>
                                     vertical: 9,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: _resultColor.withOpacity(0.12),
+                                    color: _resultColor.withValues(alpha: 0.12),
                                     borderRadius: BorderRadius.circular(30),
                                     border: Border.all(
-                                      color: _resultColor.withOpacity(0.5),
+                                      color: _resultColor.withValues(
+                                        alpha: 0.5,
+                                      ),
                                     ),
                                   ),
                                   child: Text(
@@ -369,7 +371,7 @@ class _BmicalculatorpageState extends State<Bmicalculatorpage>
                               color: const Color(0xff141414),
                               borderRadius: BorderRadius.circular(24),
                               border: Border.all(
-                                color: Colors.white.withOpacity(0.06),
+                                color: Colors.white.withValues(alpha: 0.06),
                               ),
                             ),
                             child: Column(
@@ -454,7 +456,7 @@ class _MetricCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xff141414),
         borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: Colors.white.withOpacity(0.07)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -566,7 +568,7 @@ class _GaugePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14
       ..strokeCap = StrokeCap.round
-      ..color = Colors.white.withOpacity(0.07);
+      ..color = Colors.white.withValues(alpha: 0.07);
 
     canvas.drawArc(
       Rect.fromCircle(center: Offset(cx, cy), radius: r),
@@ -582,7 +584,7 @@ class _GaugePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14
       ..strokeCap = StrokeCap.round
-      ..color = resultColor.withOpacity(0.7);
+      ..color = resultColor.withValues(alpha: 0.7);
 
     canvas.drawArc(
       Rect.fromCircle(center: Offset(cx, cy), radius: r),
@@ -609,7 +611,7 @@ class _GaugePainter extends CustomPainter {
     canvas.drawCircle(Offset(cx, cy), 3, Paint()..color = Colors.black);
 
     // Zone tick labels
-    final labels = ['< 18.5', '25', '30', '40+'];
+    final labels = ['< 18.5', '25'];
     final angles = [-1.45, -0.1, 0.5, 1.45];
     final tp = TextPainter(textDirection: TextDirection.ltr);
 
@@ -655,10 +657,10 @@ class _ScaleRow extends StatelessWidget {
       duration: const Duration(milliseconds: 300),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
       decoration: BoxDecoration(
-        color: active ? color.withOpacity(0.1) : Colors.transparent,
+        color: active ? color.withValues(alpha: 0.1) : Colors.transparent,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: active ? color.withOpacity(0.4) : Colors.transparent,
+          color: active ? color.withValues(alpha: 0.4) : Colors.transparent,
           width: 1.2,
         ),
       ),
@@ -673,7 +675,7 @@ class _ScaleRow extends StatelessWidget {
               boxShadow: active
                   ? [
                       BoxShadow(
-                        color: color.withOpacity(0.5),
+                        color: color.withValues(alpha: 0.5),
                         blurRadius: 8,
                         spreadRadius: 1,
                       ),
@@ -694,7 +696,9 @@ class _ScaleRow extends StatelessWidget {
           Text(
             range,
             style: TextStyle(
-              color: active ? color.withOpacity(0.8) : Colors.grey.shade700,
+              color: active
+                  ? color.withValues(alpha: 0.8)
+                  : Colors.grey.shade700,
               fontSize: 13,
               fontWeight: FontWeight.w500,
             ),

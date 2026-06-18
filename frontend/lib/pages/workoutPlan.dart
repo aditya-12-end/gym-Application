@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:frontend/integration/wrokout.dart';
 import 'package:frontend/myWidget/buildField.dart';
 import 'package:frontend/myWidget/mySuggestedWotkout.dart';
-import 'package:frontend/pages/createWorkoutPage.dart';
 import 'package:frontend/pages/wrokoutDetailsPage.dart';
 
 class Workoutplan extends StatefulWidget {
@@ -140,24 +138,27 @@ class _WorkoutplanState extends State<Workoutplan> {
                     const SizedBox(height: 15),
 
                     ...exercises.map(
-                      (exercise) => Card(
-                        color: Colors.black,
-                        child: ListTile(
-                          title: Text(
-                            exercise["exerciseName"],
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                          subtitle: Text(
-                            "${exercise["sets"]} Sets • ${exercise["reps"]} Reps",
-                            style: const TextStyle(color: Colors.grey),
-                          ),
-                          trailing: IconButton(
-                            icon: const Icon(Icons.delete, color: Colors.red),
-                            onPressed: () {
-                              setModalState(() {
-                                exercises.remove(exercise);
-                              });
-                            },
+                      (exercise) => Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Card(
+                          color: Colors.black,
+                          child: ListTile(
+                            title: Text(
+                              exercise["exerciseName"],
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              "${exercise["sets"]} Sets • ${exercise["reps"]} Reps",
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.delete, color: Colors.red),
+                              onPressed: () {
+                                setModalState(() {
+                                  exercises.remove(exercise);
+                                });
+                              },
+                            ),
                           ),
                         ),
                       ),
@@ -169,16 +170,12 @@ class _WorkoutplanState extends State<Workoutplan> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () async {
-                          print("Create button pressed");
-
                           try {
                             await WorkoutService().createWorkout(
                               workoutName: workoutNameController.text,
                               targetedMuscle: targetMuscleController.text,
                               exercises: exercises,
                             );
-
-                            print("Workout created successfully");
 
                             Navigator.pop(context);
 
@@ -188,8 +185,6 @@ class _WorkoutplanState extends State<Workoutplan> {
                               const SnackBar(content: Text("Workout Created")),
                             );
                           } catch (e) {
-                            print(e);
-
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(e.toString())),
                             );
@@ -348,7 +343,7 @@ class _WorkoutplanState extends State<Workoutplan> {
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 30,
+                    fontSize: 33,
                   ),
                 ),
                 SizedBox(width: 200),
@@ -357,7 +352,7 @@ class _WorkoutplanState extends State<Workoutplan> {
                     showCreateWorkoutSheet();
                   },
                   child: CircleAvatar(
-                    radius: 24,
+                    radius: 20,
                     backgroundColor: Colors.white,
                     child: Icon(Icons.add, color: Colors.black, size: 40),
                   ),
@@ -372,6 +367,9 @@ class _WorkoutplanState extends State<Workoutplan> {
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(221, 28, 27, 27),
                         borderRadius: BorderRadius.circular(20),
+                        border: BoxBorder.all(
+                          color: const Color.fromARGB(255, 83, 82, 82),
+                        ),
                       ),
                       width: 380,
                       height: 250,
@@ -410,10 +408,11 @@ class _WorkoutplanState extends State<Workoutplan> {
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 22,
                       ),
                       textAlign: TextAlign.start,
                     ),
+                    SizedBox(height: 20),
                     Mysuggestedwotkout(
                       title: "Push,Pull,Legs",
                       subititle: "One of the most famous splits",
@@ -423,17 +422,18 @@ class _WorkoutplanState extends State<Workoutplan> {
                       title: "BRO Split",
                       subititle:
                           "Routine that targets one distinct muscle group",
-                      icon: FontAwesomeIcons.weightHanging,
+                      icon: Icons.line_weight,
                     ),
                     Mysuggestedwotkout(
                       title: "Wendler",
                       subititle:
                           "steady progression in the four compound lifts.",
-                      icon: FontAwesomeIcons.dumbbell,
+                      icon: Icons.fitness_center,
                     ),
                   ],
                 )
               : Expanded(
+                
                   child: ListView.builder(
                     itemCount: workouts.length,
                     itemBuilder: (context, index) {
@@ -525,32 +525,46 @@ class _WorkoutplanState extends State<Workoutplan> {
                               ),
                             );
                           },
-                          child: Card(
-                            elevation: 0,
-                            color: const Color(0xFF1A1A1A),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.all(18),
-                              title: Text(
-                                workout["workout_name"],
-                                style: const TextStyle(
+                          
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 30.0),
+                            child: Card(
+                              elevation: 0,
+                              color: const Color(0xFF1A1A1A),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: BorderSide(
+                                  color: const Color.fromARGB(255, 51, 50, 50),
+                                ),
+                              ),
+                              child: ListTile(
+                                contentPadding: const EdgeInsets.all(18),
+                                leading: Icon(
+                                  Icons.fitness_center_outlined,
                                   color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                  size: 50,
                                 ),
-                              ),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.only(top: 8),
-                                child: Text(
-                                  workout["targeted_muscle"],
-                                  style: const TextStyle(color: Colors.white70),
+                                title: Text(
+                                  'Workout : ${workout["workout_name"]}',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              trailing: const Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.white54,
+                                subtitle: Padding(
+                                  padding: const EdgeInsets.only(top: 8),
+                                  child: Text(
+                                    "Target Muscle: ${workout["targeted_muscle"]}",
+                                    style: const TextStyle(
+                                      color: Colors.white70,
+                                    ),
+                                  ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white54,
+                                ),
                               ),
                             ),
                           ),

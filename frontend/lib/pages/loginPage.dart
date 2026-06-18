@@ -84,6 +84,7 @@ class _LoginpageState extends State<Loginpage> {
                           t1: "*Email",
                           t2: "Enter your email",
                           controller: email,
+                          val: false,
                         ),
 
                         const SizedBox(height: 25),
@@ -92,6 +93,7 @@ class _LoginpageState extends State<Loginpage> {
                           t1: "*Password",
                           t2: "Enter your password",
                           controller: password,
+                          val: true,
                         ),
 
                         const SizedBox(height: 10),

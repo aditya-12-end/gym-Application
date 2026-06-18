@@ -142,20 +142,6 @@ class _DietplanState extends State<Dietplan> {
 
             const SizedBox(height: 8),
 
-            // Section label
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'BUILT-IN PLANS',
-                style: TextStyle(
-                  color: Colors.white24,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1.4,
-                ),
-              ),
-            ),
-
             const SizedBox(height: 12),
 
             // Plan list

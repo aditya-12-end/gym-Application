@@ -64,6 +64,7 @@ class _ForgetpasswordpageState extends State<Forgetpasswordpage> {
                           t1: "*Email",
                           t2: "Enter your email",
                           controller: email,
+                          val: false,
                         ),
 
                         const SizedBox(height: 25),
@@ -72,6 +73,7 @@ class _ForgetpasswordpageState extends State<Forgetpasswordpage> {
                           t1: "* new Password",
                           t2: "Enter your new-password",
                           controller: password,
+                          val: false,
                         ),
 
                         const SizedBox(height: 25),

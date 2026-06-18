@@ -17,8 +17,14 @@ class Mysuggestedwotkout extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: ListTile(
         shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: const Color.fromARGB(255, 83, 82, 82),
+            width: 0.4,
+            style: BorderStyle.values[1],
+          ),
           borderRadius: BorderRadiusGeometry.circular(10),
         ),
+
         leading: Icon(icon, color: Colors.white, size: 40),
         subtitle: Row(
           children: [

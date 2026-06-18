@@ -246,10 +246,10 @@ class _MeditationpageState extends State<Meditationpage>
             decoration: BoxDecoration(
               color: const Color(0xff171717),
               borderRadius: BorderRadius.circular(28),
-              border: Border.all(color: Colors.white.withOpacity(0.08)),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.purple.withOpacity(0.15),
+                  color: Colors.purple.withValues(alpha: 0.15),
                   blurRadius: 40,
                   spreadRadius: 5,
                 ),
@@ -393,7 +393,7 @@ class _MeditationpageState extends State<Meditationpage>
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.purple.withOpacity(0.5),
+                                color: Colors.purple.withValues(alpha: 0.5),
                                 blurRadius: 30,
                                 spreadRadius: 5,
                               ),
@@ -416,18 +416,18 @@ class _MeditationpageState extends State<Meditationpage>
                           borderRadius: BorderRadius.circular(28),
                           gradient: LinearGradient(
                             colors: [
-                              Colors.white.withOpacity(0.05),
-                              Colors.white.withOpacity(0.02),
+                              Colors.white.withValues(alpha: 0.05),
+                              Colors.white.withValues(alpha: 0.02),
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                           border: Border.all(
-                            color: Colors.white.withOpacity(0.08),
+                            color: Colors.white.withValues(alpha: 0.08),
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
+                              color: Colors.black.withValues(alpha: 0.25),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
                             ),
@@ -527,22 +527,22 @@ class _MeditationpageState extends State<Meditationpage>
                                   borderRadius: BorderRadius.circular(25),
                                   gradient: LinearGradient(
                                     colors: [
-                                      colors[currentIndex].withOpacity(0.25),
+                                      colors[currentIndex].withValues(alpha: 0.25),
                                       const Color(0xff171717),
                                     ],
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                   ),
                                   border: Border.all(
-                                    color: colors[currentIndex].withOpacity(
-                                      0.5,
+                                    color: colors[currentIndex].withValues(
+                                      alpha: 0.5,
                                     ),
                                     width: 1.5,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: colors[currentIndex].withOpacity(
-                                        0.4,
+                                      color: colors[currentIndex].withValues(
+                                        alpha: 0.4,
                                       ),
                                       blurRadius: 25,
                                     ),
@@ -561,7 +561,7 @@ class _MeditationpageState extends State<Meditationpage>
                                         CircleAvatar(
                                           radius: 35,
                                           backgroundColor: colors[currentIndex]
-                                              .withOpacity(0.2),
+                                              .withValues(alpha: 0.2),
                                           child: Icon(
                                             icons[currentIndex],
                                             color: colors[currentIndex],
@@ -676,10 +676,10 @@ class _FloatingTimerBar extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: const Color(0xff171717),
-        border: Border.all(color: Colors.white.withOpacity(0.07)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
         boxShadow: [
           BoxShadow(
-            color: Colors.purple.withOpacity(0.2),
+            color: Colors.purple.withValues(alpha: 0.2),
             blurRadius: 20,
             spreadRadius: 2,
           ),
@@ -702,8 +702,8 @@ class _FloatingTimerBar extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          const Color(0xff4A148C).withOpacity(0.45),
-                          accentColor.withOpacity(0.2),
+                          const Color(0xff4A148C).withValues(alpha: 0.45),
+                          accentColor.withValues(alpha: 0.2),
                         ],
                       ),
                     ),
@@ -730,7 +730,7 @@ class _FloatingTimerBar extends StatelessWidget {
                           color: Colors.purpleAccent,
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.purpleAccent.withOpacity(0.6),
+                              color: Colors.purpleAccent.withValues(alpha: 0.6),
                               blurRadius: 8,
                               spreadRadius: 2,
                             ),
@@ -774,9 +774,9 @@ class _FloatingTimerBar extends StatelessWidget {
                       padding: const EdgeInsets.all(7),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(0.06),
+                        color: Colors.white.withValues(alpha: 0.06),
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.12),
+                          color: Colors.white.withValues(alpha: 0.12),
                         ),
                       ),
                       child: const Icon(
@@ -839,8 +839,8 @@ class _TimerOption extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Colors.white.withOpacity(0.04),
-          border: Border.all(color: Colors.white.withOpacity(0.08)),
+          color: Colors.white.withValues(alpha: 0.04),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
         ),
         child: Row(
           children: [

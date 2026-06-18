@@ -10,7 +10,7 @@ Future<String> registerUser({
   required String password,
 }) async {
   final response = await http.post(
-    Uri.parse("${baseUrl}/auth/createUser"),
+    Uri.parse("$baseUrl/auth/createUser"),
     headers: {'Content-Type': 'application/json'},
     body: jsonEncode({'email': email, 'password': password}),
   );
@@ -27,7 +27,7 @@ Future<String> loginUser({
   required String password,
 }) async {
   final response = await http.post(
-    Uri.parse("${baseUrl}/auth/loginUser"),
+    Uri.parse("$baseUrl/auth/loginUser"),
     headers: {'Content-Type': 'application/json'},
     body: jsonEncode({'email': email, 'password': password}),
   );
@@ -61,7 +61,7 @@ Future<Map<String, dynamic>> getUser() async {
   }
 
   final response = await http.get(
-    Uri.parse("${baseUrl}/auth/getUser"),
+    Uri.parse("$baseUrl/auth/getUser"),
     headers: {
       "Content-Type": "application/json",
       "Authorization": "Bearer $token",

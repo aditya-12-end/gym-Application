@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/pages/createWorkoutPage.dart';
 import 'package:frontend/pages/dietPlan.dart';
 import 'package:frontend/pages/loginPage.dart';
 import 'package:frontend/pages/meditationPage.dart';
-import 'package:frontend/pages/profilePage.dart';
 import 'package:frontend/pages/registerPage.dart';
 import 'package:frontend/pages/workoutPlan.dart';
 
@@ -93,7 +91,7 @@ class _HomepageState extends State<Homepage> {
           ),
           const SizedBox(width: 10),
           const Text(
-            'GYM FIT',
+            'GYM FIT ',
             style: TextStyle(
               color: _textPrimary,
               fontSize: 16,
@@ -172,9 +170,9 @@ class _HomepageState extends State<Homepage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: _red.withOpacity(0.15),
+                  color: _red.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: _red.withOpacity(0.5)),
+                  border: Border.all(color: _red.withValues(alpha: 0.5)),
                 ),
                 child: const Text(
                   'YOUR FITNESS JOURNEY',
@@ -261,7 +259,7 @@ class _HomepageState extends State<Homepage> {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: _red.withOpacity(0.4),
+              color: _red.withValues(alpha: 0.4),
               blurRadius: 24,
               offset: const Offset(0, 8),
             ),
@@ -348,7 +346,7 @@ class _HomepageState extends State<Homepage> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: _red.withOpacity(0.4),
+                          color: _red.withValues(alpha: 0.4),
                           blurRadius: 12,
                           offset: const Offset(0, 4),
                         ),
@@ -382,7 +380,7 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
             ),
-            Divider(color: Colors.white.withOpacity(0.08), height: 1),
+            Divider(color: Colors.white.withValues(alpha: 0.08), height: 1),
             const SizedBox(height: 8),
 
             // Account group
@@ -397,7 +395,7 @@ class _HomepageState extends State<Homepage> {
             _drawerItem(Icons.person_add_outlined, 'Register', () {}),
 
             const SizedBox(height: 8),
-            Divider(color: Colors.white.withOpacity(0.06), height: 1),
+            Divider(color: Colors.white.withValues(alpha: 0.06), height: 1),
 
             _drawerGroupLabel('FEATURES'),
             _drawerItem(Icons.fitness_center_outlined, 'Workout Plans', () {
@@ -435,7 +433,7 @@ class _HomepageState extends State<Homepage> {
             _drawerItem(Icons.monitor_heart_outlined, 'BMI Calculator', () {}),
 
             const Spacer(),
-            Divider(color: Colors.white.withOpacity(0.06), height: 1),
+            Divider(color: Colors.white.withValues(alpha: 0.06), height: 1),
 
             // Bottom group
             _drawerItem(Icons.settings_outlined, 'Settings', () {}),
@@ -478,7 +476,7 @@ class _HomepageState extends State<Homepage> {
       ),
       onTap: onTap,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      hoverColor: Colors.white.withOpacity(0.04),
+      hoverColor: Colors.white.withValues(alpha: 0.04),
     );
   }
 }

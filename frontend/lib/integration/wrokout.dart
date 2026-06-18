@@ -27,7 +27,9 @@ class WorkoutService {
     if (token == null) {
       throw Exception("User not logged in");
     }
-
+    if (workoutName.isEmpty || targetedMuscle.isEmpty || exercises.isEmpty) {
+      throw Exception("Enter the data first");
+    }
     final response = await http.post(
       Uri.parse("$baseUrl/workout/createWorkout"),
       headers: {

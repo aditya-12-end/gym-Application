@@ -4,7 +4,14 @@ class Myauthpagecard extends StatelessWidget {
   final String t1;
   final String t2;
   final TextEditingController controller;
-  const Myauthpagecard({super.key,required this.t1,required this.t2,required this.controller});
+  final bool val;
+  const Myauthpagecard({
+    super.key,
+    required this.t1,
+    required this.t2,
+    required this.controller,
+    required this.val
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +26,9 @@ class Myauthpagecard extends StatelessWidget {
           decoration: InputDecoration(
             filled: true,
             fillColor: Colors.white,
-            label: Text(
-              t2,
-              style: TextStyle(color: Colors.black),
-            ),
+            label: Text(t2, style: TextStyle(color: Colors.black)),
           ),
-          
+          obscureText: val,
         ),
       ],
     );
